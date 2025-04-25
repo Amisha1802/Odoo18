@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Inherit Of Main Form-->
+    <record id="membership_view_form" model="ir.ui.view">
+        <field name="name">res.partner.form.membership.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="replace">
+                <field name="is_member" invisible="0"/>
+            	<field name="position" widget="radio" options="{'horizontal': true}"/>
+            </xpath>    
+            <xpath expr="//field[@name='vat']" position="before">
+                <field name="unique_member_no"/>
+                <field name="date_of_birth" placeholder="e.g. mm/dd/yy"/>
+                <field name="age" placeholder="Age"/>
+                <field name="blood_group" placeholder="e.g. B+, O, etc"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="gender"/>
+                <label for="native_street" string="Native Address"/>
+                <div class="o_address_format">
+                    <field name="native_street" placeholder="Street..." class="o_address_street"/>
+                    <field name="native_street2" placeholder="Street 2..." class="o_address_street"/>
+                    <field name="native_city" placeholder="City" class="o_address_city"/>
+                    <field name="native_state_id" class="o_address_state" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" context="{'default_country_id': native_country_id}"/>
+                    <field name="native_zip" placeholder="ZIP" class="o_address_zip"/>
+                    <field name="native_country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='title']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="relation_id"/>
+                <field name="marital_status"/>
+                <field name="occupation"/>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="income" placeholder="e.g. 10,00,000 "/>
+                <field name="family_income"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='contact_addresses']" position="attributes">
+                <attribute name="string">Family Members</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='contact_addresses']" position="attributes">
+                <attribute name="invisible">not 'is_member'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Inherit Of Membership Page-->
+    <record id="membership_page_view_form" model="ir.ui.view">
+        <field name="name">membership.page.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="membership.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(membership.action_membership_invoice_view)d']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

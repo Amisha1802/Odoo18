@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		<!--List View of Member Relaion-->
+		<record id="view_member_relation_list" model="ir.ui.view">
+			<field name="name">member.relation.list</field>
+			<field name="model">member.relation</field>
+			<field name="arch" type="xml">
+				<list string="Member Relations" editable="bottom">
+					<field name="name"/>
+				</list>
+			</field>
+		</record>
+
+		<!--Action of Member Relaion-->
+		<record id="action_member_relation" model="ir.actions.act_window">
+			<field name="name">Member Relation</field>
+			<field name="res_model">member.relation</field>
+			<field name="view_mode">list</field>
+		</record>
+
+		<!--Menu Item for Member Relation-->
+		<menuitem id="menu_member_relation"
+			name="Member Relations"
+			parent="membership.menu_marketing_config_association"
+			action="action_member_relation"
+			sequence="20"/>
+
+	</data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--Selection Data for Relation Field-->
+        <record id="relation_myself" model="member.relation">
+            <field name="name">Myself</field>
+        </record>
+        <record id="relation_father" model="member.relation">
+            <field name="name">Father</field>
+        </record>
+        <record id="relation_mother" model="member.relation">
+            <field name="name">Mother</field>
+        </record>
+        <record id="relation_father_in_law" model="member.relation">
+            <field name="name">Father-in-Law</field>
+        </record>
+        <record id="relation_mother_in_law" model="member.relation">
+            <field name="name">Mother-in-Law</field>
+        </record>
+        <record id="relation_brother" model="member.relation">
+            <field name="name">Brother</field>
+        </record>
+        <record id="relation_sister" model="member.relation">
+            <field name="name">Sister</field>
+        </record>
+        <record id="relation_brother_in_law" model="member.relation">
+            <field name="name">Brother-in-Law</field>
+        </record>
+        <record id="relation_sister_in_law" model="member.relation">
+            <field name="name">Sister-in-Law</field>
+        </record>
+        <record id="relation_wife" model="member.relation">
+            <field name="name">Wife</field>
+        </record>
+        <record id="relation_son" model="member.relation">
+            <field name="name">Son</field>
+        </record>
+        <record id="relation_daughter" model="member.relation">
+            <field name="name">Daughter</field>
+        </record>
+        <record id="relation_son_in_law" model="member.relation">
+            <field name="name">Son-in-Law</field>
+        </record>
+        <record id="relation_daughter_in_law" model="member.relation">
+            <field name="name">Daughter-in-Law</field>
+        </record>
+        <record id="relation_uncle" model="member.relation">
+            <field name="name">Uncle</field>
+        </record>
+        <record id="relation_aunt" model="member.relation">
+            <field name="name">Aunt</field>
+        </record>
+    </data>
+</odoo>

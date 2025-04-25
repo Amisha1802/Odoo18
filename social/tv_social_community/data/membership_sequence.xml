@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--Sequence for the field Member No.-->
+        <record id="seq_membership_number" model="ir.sequence">
+            <field name="name">Membership Number</field>
+            <field name="code">res.partner</field>
+            <field name="prefix">MEM-</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>
